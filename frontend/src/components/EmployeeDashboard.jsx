@@ -7,7 +7,7 @@ import EmployeeTable from "./EmployeeTable";
 import "../App.css";
 
 import logo from "../assets/pramerica-logo.png";
-
+const API_URL = "https://employee-management-system-iaat.onrender.com";
 
 function EmployeeDashboard({logout}) {
 
@@ -74,37 +74,17 @@ fetchEmployees();
 },[]);
 
 
-
-
-
-
-
-const fetchEmployees=async()=>{
-
-
-try{
-
-
-const res = await axios.get(
-
-"http://localhost:5000/api/employees"
-
-);
-
-
-setEmployees(res.data.employees);
-
-
-}
-
-catch(error){
-
-console.log(error);
-
-}
-
-
+const fetchEmployees = async () => {
+  try {
+    const res = await axios.get(`${API_URL}/api/employees`);
+    setEmployees(res.data.employees);
+  } catch (error) {
+    console.log(error);
+  }
 };
+
+
+
 
 
 
@@ -115,62 +95,26 @@ console.log(error);
 // Add / Update Employee
 
 
-const addEmployee=async(employee)=>{
+const addEmployee = async (employee) => {
+  try {
+    if (editData) {
+      await axios.put(
+        `${API_URL}/api/employees/${editData.id}`,
+        employee
+      );
+    } else {
+      await axios.post(
+        `${API_URL}/api/employees`,
+        employee
+      );
+    }
 
-
-try{
-
-
-if(editData){
-
-
-await axios.put(
-
-`http://localhost:5000/api/employees/${editData.id}`,
-
-employee
-
-);
-
-
-}
-
-else{
-
-
-await axios.post(
-
-"http://localhost:5000/api/employees",
-
-employee
-
-);
-
-
-}
-
-
-
-fetchEmployees();
-
-
-setShowModal(false);
-
-setEditData(null);
-
-
-
-}
-
-catch(error){
-
-
-console.log(error);
-
-
-}
-
-
+    fetchEmployees();
+    setShowModal(false);
+    setEditData(null);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 
@@ -216,35 +160,17 @@ setDeleteId(id);
 // Confirm Delete
 
 
-const confirmDelete=async()=>{
+const confirmDelete = async () => {
+  try {
+    await axios.delete(
+      `${API_URL}/api/employees/${deleteId}`
+    );
 
-
-try{
-
-
-await axios.delete(
-
-`http://localhost:5000/api/employees/${deleteId}`
-
-);
-
-
-
-fetchEmployees();
-
-
-setDeleteId(null);
-
-
-}
-
-catch(error){
-
-console.log(error);
-
-}
-
-
+    fetchEmployees();
+    setDeleteId(null);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 
