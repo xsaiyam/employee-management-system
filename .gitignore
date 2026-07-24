@@ -1,0 +1,14 @@
+﻿backend/node_modules/
+frontend/node_modules/
+
+backend/.env
+frontend/.env
+
+*.db
+*.sqlite
+*.sqlite3
+
+dist/
+build/
+
+.DS_Store

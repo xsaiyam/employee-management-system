@@ -1,0 +1,277 @@
+/* ==========================
+   TABLE CONTAINER
+========================== */
+
+
+.table-container{
+
+width:92%;
+
+margin:30px auto;
+
+background:white;
+
+padding:25px;
+
+border-radius:15px;
+
+box-shadow:0 5px 20px rgba(0,0,0,.12);
+
+overflow-x:auto;
+
+}
+
+
+
+/* TABLE TITLE */
+
+.table-title{
+
+color:#003b71;
+
+font-size:24px;
+
+margin-bottom:20px;
+
+border-left:6px solid #ffc107;
+
+padding-left:12px;
+
+}
+
+
+
+/* ==========================
+   TABLE
+========================== */
+
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+font-size:15px;
+
+}
+
+
+
+thead{
+
+background:#003b71;
+
+color:white;
+
+}
+
+
+
+thead th{
+
+padding:15px;
+
+text-align:center;
+
+font-weight:600;
+
+}
+
+
+
+tbody td{
+
+padding:14px;
+
+text-align:center;
+
+border-bottom:1px solid #ddd;
+
+}
+
+
+
+
+/* Zebra Row */
+
+tbody tr:nth-child(even){
+
+background:#f7faff;
+
+}
+
+
+
+/* Hover */
+
+tbody tr:hover{
+
+background:#fff3cd;
+
+transition:.3s;
+
+}
+
+
+
+/* ==========================
+ BUTTONS
+========================== */
+
+
+.edit-btn{
+
+
+background:#ffc107;
+
+
+color:#003b71;
+
+
+border:none;
+
+
+padding:8px 14px;
+
+
+border-radius:7px;
+
+
+font-weight:bold;
+
+
+cursor:pointer;
+
+
+margin-right:8px;
+
+
+}
+
+
+
+.edit-btn:hover{
+
+
+background:#ffb300;
+
+
+}
+
+
+
+
+
+.delete-btn{
+
+
+background:#dc3545;
+
+
+color:white;
+
+
+border:none;
+
+
+padding:8px 14px;
+
+
+border-radius:7px;
+
+
+font-weight:bold;
+
+
+cursor:pointer;
+
+
+}
+
+
+
+.delete-btn:hover{
+
+
+background:#b02a37;
+
+
+}
+
+
+
+
+
+/* ==========================
+ NO DATA
+========================== */
+
+
+.no-data{
+
+
+text-align:center;
+
+
+padding:50px;
+
+
+color:#777;
+
+
+}
+
+
+
+.no-data h3{
+
+
+color:#003b71;
+
+
+font-size:25px;
+
+
+margin-bottom:10px;
+
+
+}
+
+
+
+/* ==========================
+ RESPONSIVE
+========================== */
+
+
+@media(max-width:900px){
+
+
+.table-container{
+
+width:98%;
+
+padding:15px;
+
+}
+
+
+table{
+
+font-size:13px;
+
+}
+
+
+.edit-btn,
+.delete-btn{
+
+padding:6px 8px;
+
+font-size:12px;
+
+}
+
+
+}
